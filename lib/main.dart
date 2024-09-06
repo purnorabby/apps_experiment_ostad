@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
+import 'app.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ShoppingCart(),
-    );
-  }
-}
 
 class ShoppingCart extends StatefulWidget {
   @override
@@ -17,24 +10,24 @@ class ShoppingCart extends StatefulWidget {
 }
 
 class _ShoppingCartState extends State<ShoppingCart> {
-  // Item quantities
+
   int pulloverQuantity = 1;
   int tshirtQuantity = 1;
   int sportDressQuantity = 1;
 
-  // Item prices
+
   final double pulloverPrice = 51.0;
   final double tshirtPrice = 30.0;
   final double sportDressPrice = 43.0;
 
-  // Calculate total
+
   double get totalAmount {
     return (pulloverQuantity * pulloverPrice) +
         (tshirtQuantity * tshirtPrice) +
         (sportDressQuantity * sportDressPrice);
   }
 
-  // Snackbar message on checkout
+
   void _showCheckoutMessage() {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Congratulations! You have checked out successfully.')),
@@ -112,15 +105,15 @@ class _ShoppingCartState extends State<ShoppingCart> {
       );
   }
 
-  // Helper to build each cart item with ListTile
+
   Widget buildCartItem(String name, String color, String size, double price, int quantity, String imagePath, Function(int) onChanged) {
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       leading: Image.asset(
         'assets/images/T-shirt.png',
-        width: 50, // Set the size for the logo
+        width: 50,
         height: 50,
-        fit: BoxFit.cover, // Ensure the image covers the space properly
+        fit: BoxFit.cover,
       ),
       title: Text(name),
       subtitle: Text('Color: $color, Size: $size'),

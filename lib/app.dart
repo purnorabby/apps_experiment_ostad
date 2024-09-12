@@ -1,33 +1,50 @@
-import 'package:apps_experiment_ostad/my_bag_screen.dart';
+import 'package:apps_experiment_ostad/home.dart';
 import 'package:flutter/material.dart';
 
-class MyBagApp extends StatelessWidget {
-  const MyBagApp({super.key});
+class HummingBirdApp extends StatelessWidget {
+  const HummingBirdApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const MyBagScreen(),
       theme: ThemeData(
-          textTheme: const TextTheme(
-        bodyLarge: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 24,
+        appBarTheme: const AppBarTheme(
+          titleTextStyle: TextStyle(
+            fontSize: 18,
+            color: Colors.black
+          ),
         ),
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.bold
+          ),
+        ),
+        listTileTheme: const ListTileThemeData(
+          textColor: Colors.black,
 
-            bodySmall: TextStyle(
-              fontSize: 18
-            )
-      ),
-        iconButtonTheme: IconButtonThemeData(
-            style: IconButton.styleFrom(
-                backgroundColor:Colors.grey.shade200,
-              foregroundColor: Colors.grey.shade600,
-              shadowColor: Colors.grey.shade200,
-              elevation: 1
-            ))
-      ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.green,
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 71,vertical: 28),
+            textStyle: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            foregroundColor: Colors.black
+          )
+          )
+        ),
+      home: const Home(),
     );
   }
 }

@@ -14,6 +14,7 @@ class ResponsiveLayout extends StatelessWidget {
   final Widget mobile;
   final Widget tablet;
   final Widget laptop;
+  //
 
   @override
   Widget build(BuildContext context) {
